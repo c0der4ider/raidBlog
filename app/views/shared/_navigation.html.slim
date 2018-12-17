@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-default.fixed-top
+  .container
+    = link_to 'collabfield', root_path, class: 'navbar-brand'
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link href="#" Home
+        li.nav-item
+          a.nav-link href="#"  Link
+      ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              span#user-name= current_user.username
+              span.caret
+            .dropdown-menu aria-labelledby="navbarDropdown"
+              = link_to 'Edit Profile', edit_user_registration_path, class: "dropdown-item"
+              .dropdown-divider
+              = link_to 'Log out', destroy_user_session_path, method: :delete, class: "dropdown-item"
+        - else
+          li.nav-item
+            = link_to 'Login', login_path, class: "nav-link"
+          li.nav-item
+            = link_to 'Sign Up', signup_path, class: "nav-link"
