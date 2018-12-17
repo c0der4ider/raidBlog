@@ -1,6 +1,7 @@
 root = exports ? this
-root.Main = ( ->
+root.origin = ( ->
   init = (layout) ->
+    window.Noty = require('noty')
 
     if layout == 'application'
       configure($(document))
@@ -10,24 +11,7 @@ root.Main = ( ->
     return
 
   alerts = (type, message) ->
-    toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": true,
-      "progressBar": true,
-      "positionClass": "toast-bottom-right",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-    toastr[type](message)
+    new Noty({ type: type, text: message }).show()
 
   {
     init: init,

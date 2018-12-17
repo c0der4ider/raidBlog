@@ -1,5 +1,5 @@
 root = exports ? this
-root.Pages = ( ->
+root.pages = ( ->
   init = (page) ->
     switch page
       when 'index'

@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
 end
 
 group :development do
@@ -79,6 +80,7 @@ gem 'slim'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.3'
-gem 'toastr-rails'
+gem 'noty-rails'
 gem 'devise'
 gem 'bootstrap_form', '>= 4.0.0'
+gem 'ancestry'
