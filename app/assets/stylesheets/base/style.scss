@@ -30,7 +30,7 @@ a:hover, a:active, a:link, a:visited {
   text-decoration: none;
 }
 
-.control-label {
+.form-group label {
   display: none;
 }
 
@@ -82,8 +82,6 @@ nav {
 #main-content {
   background: white;
   min-height: 800px;
-  margin: 0;
-  padding: 10px 0 0 0;
 }
 
 #side-menu {
@@ -120,4 +118,57 @@ nav {
   #side-menu {
     display: none !important;
   }
+}
+
+.single-post-card {
+  margin-top: 20px;
+}
+
+.inner-post-card {
+  margin-top: 20px;
+  box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
+  color: black;
+  transition: border 0.1s, background 0.5s;
+  .post-text {
+    overflow: hidden;
+  }
+  a, a:active, a:hover {
+    color: black;
+  }
+  &:hover {
+    cursor: pointer;
+    background: white;
+    box-shadow: none;
+    border-radius: 1%;
+  }
+}
+
+.post-content {
+  display: none;
+}
+
+.card-text {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break: break-all;
+}​
+
+pre, code {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  webkit-box-sizing:border-box;
+  display:block;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  word-break: keep-all;
+  width:100%;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+  background-color: #f6f8fa;
 }

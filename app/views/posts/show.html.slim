@@ -1,0 +1,16 @@
+.container#main-content
+    .col-lg-12
+    /! Title
+    h1.mt-4 = @post.title
+    /! Author
+    p.lead
+      = "Created by #{@post.user.username}"
+    hr/
+    /! Date/Time
+    p Posted on January 1, 2018 at 12:00 PM
+    hr/
+    /! Preview Image
+    img.img-fluid.rounded alt="" src="http://placehold.it/1200x300" /
+    hr/
+    /! Post Content
+    = markdown(@post.content)

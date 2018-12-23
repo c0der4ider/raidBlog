@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_063230) do
+ActiveRecord::Schema.define(version: 2018_12_17_010101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,20 +18,23 @@ ActiveRecord::Schema.define(version: 2018_12_17_063230) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "branch"
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.string "description"
     t.text "content"
+    t.boolean "public", default: false
     t.bigint "category_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["title"], name: "index_posts_on_title"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

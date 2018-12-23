@@ -48,9 +48,11 @@ def seed_posts
     5.times do
       Post.create(
         title: Faker::Lorem.sentences[0],
+        description: Faker::Lorem.sentences[0],
         content: Faker::Lorem.sentences[0],
         user: User.all.sample,
-        category: category
+        category: category,
+        public: true
       )
     end
   end

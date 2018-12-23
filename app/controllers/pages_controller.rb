@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    flash[:notice] = "testing desde el back"
+    @posts = Post.feed_posts
   end
 
 end

@@ -1,10 +1,7 @@
-.container
-  .row
-    #side-menu.col-sm-3
-
-    #main-content.col-sm-9
-
-
+.container#main-content
+  .row.mb-2
+    - @posts.each do |post|
+      = render partial: 'posts/posts', locals: { post: post }
 
 javascript:
   $(function(){pages.init('index');});
