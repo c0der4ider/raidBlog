@@ -1,7 +1,15 @@
+.container
+  .row
+    .col-md-12
+      = render partial: 'shared/slider'
 .container#main-content
   .row.mb-2
-    - @posts.each do |post|
-      = render partial: 'posts/posts', locals: { post: post }
+    .col-md-3
+    .col-md-6
+      - @posts.each do |post|
+        = render partial: 'posts/posts', locals: { post: post }
+    .col-md-3
+
 
 javascript:
   $(function(){pages.init('index');});
